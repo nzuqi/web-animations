@@ -1,0 +1,24 @@
+<div class="sidenav">
+
+    <div class="profile">
+        <div class="avatar"><img src="https://i.pravatar.cc/72?img=10" alt="user"></div>
+        <span class="username">Jane Doe</span>
+        <span class="action">Edit</span>
+    </div>
+
+    <ul class="menu">
+        <li class="item" *ngFor="let nav of navigation" [routerLink]="nav.route" [routerLinkActive]="'active'"
+            [routerLinkActiveOptions]="{exact: true}">
+            <span class="material-symbols-outlined">{{ nav.icon }}</span>
+            {{ nav.name }}
+        </li>
+    </ul>
+
+    <ul class="settings">
+        <li class="item" (click)="changeTheme(!darkMode)">
+            <span class="material-symbols-outlined">{{ !darkMode ? 'dark_mode' : 'light_mode' }}</span>
+            {{ !darkMode ? 'Dark' : 'Light' }} mode
+        </li>
+    </ul>
+
+</div>
