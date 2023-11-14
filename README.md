@@ -1,5 +1,7 @@
 # Web Animations
 
+This is a Dribbble shot by [Halo UI/UX](https://dribbble.com/shots/20920711-Wise-Admin-Dashboard-Analytics-UX)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.10.
 
 ## Development server
