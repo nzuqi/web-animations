@@ -7,11 +7,11 @@ html[data-theme='light'] {
     --background-color: #f4f4f4;
     --menu-item-color: #7d665c;
     --menu-item-color-active: #7d665c;
-    --menu-item-color-active-bg: #7d665c36;
+    --menu-item-color-active-bg: #DCDCDD;
     --border-color: #d8d8d8;
     --text-color: #383838;
     --link-color: #543fd7;
-    --card-color: #7d665c36;
+    --card-color: #DCDCDD;
     --active-card-color: #FFF17A;
 }
 
@@ -67,6 +67,9 @@ body {
                     border-radius: 50%;
                     background-color: var(--menu-item-color);
                     overflow: hidden;
+                    img {
+                        pointer-events: none;
+                    }
                 }
                 .username {
                     margin: 12px 0;
