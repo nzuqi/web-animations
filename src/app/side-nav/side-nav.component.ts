@@ -1,9 +1,17 @@
-import { Component } from '@angular/core';
+import { animate, query, state, style, transition, trigger } from '@angular/animations';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-side-nav',
   templateUrl: './side-nav.component.html',
-  styleUrls: ['./side-nav.component.scss']
+  styleUrls: ['./side-nav.component.scss'],
+  animations: [
+    trigger('menuHover', [
+      state('in', style({ transition: 'all .3s ease-out' })),
+      state('out', style({ transition: 'all .3s ease-out' })),
+      // transition('* => *', animate('300ms ease')),
+    ])
+  ]
 })
 export class SideNavComponent {
   darkMode = true;
@@ -18,5 +26,11 @@ export class SideNavComponent {
     this.darkMode = isDarkMode;
     document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
   }
+
+  state: string = '';
+
+  @HostListener('mouseenter', ['$event']) onEnter = (event: MouseEvent) => this.state = 'in';
+
+  @HostListener('mouseleave') onLeave = () => this.state = 'out';
 
 }
